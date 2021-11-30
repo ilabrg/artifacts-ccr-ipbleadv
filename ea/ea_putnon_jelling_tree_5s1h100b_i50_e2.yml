@@ -1,0 +1,13 @@
+setup: "ea/setup_jelling_tree.yml"
+env:
+  DEVELHELP: 0
+expvars:
+  - "expvars/itvl_5s.yml"
+  - "expvars/dur_1h.yml"
+  - "expvars/paylen_100.yml"
+  - "expvars/jelling_me_2.yml"
+  - "expvars/jelling_aitvl_50ms.yml"
+  - "expvars/jelling_sitvl_30ms.yml"
+  - "expvars/jelling_sw_30ms.yml"
+exp: "ea/exp_putnon_many2one.yml"
+

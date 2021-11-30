@@ -1,0 +1,57 @@
+site: saclay
+
+setup:
+  - name: ea_jelling
+    nodes: nrf52dk-1-10+nrf52840dk-6-10
+    fwpath: ./app_jelling
+
+expvars:
+  IF: 8
+  PREFIX: "2001:affe"
+  SINKIP: "2001:affe::32:6"
+  SINK: "nrf52dk-6"
+  PROD: "nrf52dk-1-5,7-10+nrf52840dk-6-10"
+
+topologies:
+  line: "topos/line_15n.yml"
+
+exp_setup:
+  - sleep: 5
+  - cmd: "ble config advertiser max_events {MAX_EVENTS}"
+    sleep: 2
+  - cmd: "ble config advertiser itvl_min {ADVERTISING_ITVL}"
+    sleep: 2
+  - cmd: "ble config advertiser itvl_max {ADVERTISING_ITVL}"
+    sleep: 2
+  - cmd: "ble config scanner itvl {SCANNER_ITVL}"
+    sleep: 2
+  - cmd: "ble config scanner window {SCANNER_WINDOW}"
+    slee: 2
+
+  - topo_ip_tree:
+      name: "line"
+      dflt: "{SINKIP}"
+      prefix: "{PREFIX}"
+      if: "{IF}"
+    sleep: 60
+
+  - cmd: "ps"
+    sleep: 1
+  - cmd: "ble info"
+    sleep: 1
+  - cmd: "ble config info"
+    sleep: 1
+  - cmd: "ifconfig"
+    sleep: 1
+  - cmd: "nib route show"
+    sleep: 5
+
+exp_teardown:
+  - cmd: "ps"
+    sleep: 1
+  - cmd: "ble info"
+    sleep: 1
+  - cmd: "ifconfig"
+    sleep: 1
+  - cmd: "nib route show"
+    sleep: 1

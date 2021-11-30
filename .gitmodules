@@ -1,0 +1,6 @@
+[submodule "lib/RIOT"]
+	path = lib/RIOT
+	url = https://github.com/haukepetersen/RIOT.git
+[submodule "lib/NIMBLE"]
+	path = lib/NIMBLE
+	url = https://github.com/haukepetersen/mynewt-nimble.git

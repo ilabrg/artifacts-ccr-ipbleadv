@@ -1,0 +1,9 @@
+setup: "ea/setup_jelling_star.yml"
+env:
+  DEVELHELP: 1
+expvars:
+  - "expvars/itvl_100ms.yml"
+  - "expvars/dur_1h.yml"
+  - "expvars/paylen_100.yml"
+exp: "ea/exp_putnon_many2one.yml"
+

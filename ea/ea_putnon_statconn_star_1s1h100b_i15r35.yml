@@ -1,0 +1,12 @@
+setup: "ea/setup_statconn_star.yml"
+env:
+  DEVELHELP: 0
+  NIMBLE_MAX_CONN: 14
+  EXP_BUILD_CONFIG: "env_i15r35.inc.mk"
+  EXP_BUF_CONFIG: "env_buf_limit.inc.mk"
+expvars:
+  - "expvars/itvl_1s.yml"
+  - "expvars/dur_1h.yml"
+  - "expvars/paylen_100.yml"
+exp: "ea/exp_putnon_many2one.yml"
+

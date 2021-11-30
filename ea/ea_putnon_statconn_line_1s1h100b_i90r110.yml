@@ -1,0 +1,11 @@
+setup: "ea/setup_statconn_line.yml"
+env:
+  DEVELHELP: 0
+  NIMBLE_MAX_CONN: 3
+  EXP_BUILD_CONFIG: "env_i90r110.inc.mk"
+expvars:
+  - "expvars/itvl_1s.yml"
+  - "expvars/dur_1h.yml"
+  - "expvars/paylen_100.yml"
+exp: "ea/exp_putnon_many2one.yml"
+
